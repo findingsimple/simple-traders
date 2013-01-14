@@ -19,7 +19,9 @@ class Widget_Traders_List extends WP_Widget {
 		
 		$control_ops = array('width' => 400, 'height' => 350);
 		
-		$this->WP_Widget('modal-video', __('Traders List'), $widget_ops, $control_ops);
+		$this->WP_Widget('traders-list', __('Traders List'), $widget_ops, $control_ops);
+		
+		add_action('wp_print_scripts', array($this,'trader_scripts'));
 		
 	} // end function Widget_Traders_List
 
@@ -46,7 +48,10 @@ class Widget_Traders_List extends WP_Widget {
 			
 			if($traders) {
 				
-				echo '<ul>';
+				if(has_term($type->name,'simple_trader_category'))
+					echo '<ul class="current-type">';
+				else
+					echo '<ul>';
 				
 				foreach($traders as $trader) {
 					
@@ -96,6 +101,14 @@ class Widget_Traders_List extends WP_Widget {
 		<?php
 		
 	} // end function form
+	
+	function trader_scripts() {
+	
+		if ( is_active_widget( false, false, $this->id_base, true ) ) {
+ 			wp_enqueue_script( 'simple-traders' );
+		}
+		
+	}
 	
 
 	

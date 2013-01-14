@@ -138,7 +138,7 @@ class Simple_Traders {
 			'show_ui' => true, 
 			'query_var' => true,
 			'has_archive' => false,
-			'rewrite' => false,
+			'rewrite' => array('slug' => __('traders',self::$text_domain)),
 			'capability_type' => 'post',
 			'hierarchical' => true, //allows use of wp_dropdown_pages
 			'menu_position' => null,
@@ -245,11 +245,7 @@ class Simple_Traders {
 		
 		if ( !is_admin() ) {
 		
-			//if ( get_option('simple_traders_toggle_js_include') != 1 )
-				//stuff here
-							
-			//if ( get_option('simple_traders_toggle_css_include') != 1 )
-				wp_enqueue_style( 'simple-traders', self::get_url( '/css/simple-traders.css', __FILE__ ) );
+			wp_enqueue_style( 'simple-traders', self::get_url( '/css/simple-traders.css', __FILE__ ) );
 		
 		}
 		
