@@ -307,6 +307,30 @@ class Simple_Traders {
 				<input type='text' id='trader-contact' name='trader-contact' value='<?php echo esc_attr( get_post_meta( $object->ID, '_trader-contact', true ) ); ?>' />
 			</label>
 		</p>
+		<p>
+			<label for='trader-owner'>
+				<?php _e( 'Owner\'s Name:', self::$text_domain ); ?>
+				<input type='text' id='trader-owner' name='trader-owner' value='<?php echo esc_attr( get_post_meta( $object->ID, '_trader-owner', true ) ); ?>' />
+			</label>
+		</p>
+		<p>
+			<label for='trader-manager'>
+				<?php _e( 'Manager\'s Name:', self::$text_domain ); ?>
+				<input type='text' id='trader-manager' name='trader-manager' value='<?php echo esc_attr( get_post_meta( $object->ID, '_trader-manager', true ) ); ?>' />
+			</label>
+		</p>
+		<p>
+			<label for='trader-website'>
+				<?php _e( 'Website:', self::$text_domain ); ?>
+				<input type='text' id='trader-website' name='trader-website' value='<?php echo esc_attr( get_post_meta( $object->ID, '_trader-website', true ) ); ?>' />
+			</label>
+		</p>
+		<p>
+			<label for='trader-products'>
+				<?php _e( 'Products:', self::$text_domain ); ?>
+				<input type='text' id='trader-products' name='trader-products' value='<?php echo esc_attr( get_post_meta( $object->ID, '_trader-products', true ) ); ?>' />
+			</label>
+		</p>
 
 <?php
  
@@ -326,7 +350,11 @@ class Simple_Traders {
 
 		$meta = array(
 			'trader-stall',
-			'trader-contact'
+			'trader-contact',
+			'trader-owner',
+			'trader-manager',
+			'trader-website',
+			'trader-products'
 		);
 
 		foreach ( $meta as $meta_key ) {
@@ -480,6 +508,74 @@ class Simple_Traders {
 			$id = get_the_ID();
 			
 		return get_post_meta( $id, '_trader-stall', true );
+	
+	}
+		
+	/**
+	 * Return Owner's Name
+	 *
+	 * @author Michael Furner <michael@findingsimple.com>
+	 * @package Simple Traders
+	 * @since 1.0
+	 */	
+	public static function get_owner( $id = -1 ) {
+
+		//if no trader ID use current
+		if ( $id == -1 )
+			$id = get_the_ID();
+			
+		return get_post_meta( $id, '_trader-owner', true );
+	
+	}	
+	
+	/**
+	 * Return Manager's Name
+	 *
+	 * @author Michael Furner <michael@findingsimple.com>
+	 * @package Simple Traders
+	 * @since 1.0
+	 */	
+	public static function get_manager( $id = -1 ) {
+
+		//if no trader ID use current
+		if ( $id == -1 )
+			$id = get_the_ID();
+			
+		return get_post_meta( $id, '_trader-manager', true );
+	
+	}	
+	
+	/**
+	 * Return Website
+	 *
+	 * @author Michael Furner <michael@findingsimple.com>
+	 * @package Simple Traders
+	 * @since 1.0
+	 */	
+	public static function get_website( $id = -1 ) {
+
+		//if no trader ID use current
+		if ( $id == -1 )
+			$id = get_the_ID();
+			
+		return get_post_meta( $id, '_trader-website', true );
+	
+	}
+			
+	/**
+	 * Return Products
+	 *
+	 * @author Michael Furner <michael@findingsimple.com>
+	 * @package Simple Traders
+	 * @since 1.0
+	 */	
+	public static function get_products( $id = -1 ) {
+
+		//if no trader ID use current
+		if ( $id == -1 )
+			$id = get_the_ID();
+			
+		return get_post_meta( $id, '_trader-products', true );
 	
 	}
 			
