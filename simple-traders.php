@@ -265,7 +265,7 @@ class Simple_Traders {
 							
 		if ( self::$post_type_name == $post_type ) {
 
-			wp_register_script( 'simple-traders-admin', self::get_url( '/js/simple-traders=admin.js', __FILE__ ) , false, '1.0', true );
+			wp_register_script( 'simple-traders-admin', self::get_url( '/js/simple-traders-admin.js', __FILE__ ) , false, '1.0', true );
 			wp_enqueue_script( 'simple-traders-admin' );		
 		
 		}
