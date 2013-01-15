@@ -138,7 +138,7 @@ class Simple_Traders {
 			'show_ui' => true, 
 			'query_var' => true,
 			'has_archive' => false,
-			'rewrite' => array('slug' => __('traders',self::$text_domain)),
+			'rewrite' => array('slug' => __('traders',self::$text_domain), 'with_front' => false ),
 			'capability_type' => 'post',
 			'hierarchical' => true, //allows use of wp_dropdown_pages
 			'menu_position' => null,
