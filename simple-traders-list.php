@@ -44,7 +44,7 @@ class Widget_Traders_List extends WP_Widget {
 			
 			echo '<h4 style="background:#'.$type->description.';">'.$type->name.'</h4>';
 			
-			$traders = get_posts(array('post_type' => 'simple_trader', 'trader-category' => $type->slug));
+			$traders = get_posts(array('post_type' => 'simple_trader', 'trader-category' => $type->slug, 'posts_per_page' => -1));
 			
 			if($traders) {
 				
