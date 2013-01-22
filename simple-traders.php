@@ -243,12 +243,7 @@ class Simple_Traders {
 	 */
 	public static function enqueue_styles_and_scripts(){
 		
-		if ( !is_admin() ) {
-		
-			wp_enqueue_style( 'simple-traders', self::get_url( '/css/simple-traders.css', __FILE__ ) );
-		
-		}
-		
+	
 	}
 
 	/**
