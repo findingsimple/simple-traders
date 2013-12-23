@@ -1,4 +1,7 @@
 /* Admin Menu - 16px */
+#menu-posts-simple_trader .menu-icon-post div:before {
+	content:none!important;
+}
 #menu-posts-simple_trader .wp-menu-image {
     background: url('../img/icon-adminmenu16-sprite.png') no-repeat 6px 6px !important;
 }
